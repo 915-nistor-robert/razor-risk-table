@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Trade Table App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React app that displays a table of trades and allows you to add, amend, and delete trades. You can add a trade by filling out the add trade form, which is displayed in a modal when you click the "Add Trade" button. You can update or delete a trade by clicking on a row in the table and selecting the appropriate action from the dropdown that appears.
+# Getting Started
 
-## Available Scripts
+To get started, you can clone this repository and then install the dependencies:
+```
+git clone https://github.com/915-nistor-robert/Trade_Table.git
+cd trade-table-app
+npm install
+```
 
-In the project directory, you can run:
+Once the dependencies are installed, you can start the development server:
+```
+npm start
+```
+This will start the app in development mode and open it in your default browser at http://localhost:3000. Any changes you make to the code will automatically reload the page.
+# Usage
 
-### `npm start`
+To use the app, you can add a trade by clicking the "Add Trade" button at the bottom of the table. This will open the add trade form in a modal. Fill out the form with the details of the trade and click the "Add" button to add it to the table.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To amend or delete a trade, click on the row in the table that corresponds to the trade you want to modify. This will display a dropdown with two options: "Delete" and "Amend". Select the appropriate option to delete the trade or update it by filling out the anend trade form in the modal that appears.
