@@ -30,13 +30,14 @@ export default function AddModal({availableId, show, onHide, addCallback}) {
     const addTrade = () => {
         if (checkCorrectInput()) {
             addCallback(trade);
-            resetTrade()
             onHide()
+            resetTrade()
         }
     }
 
     const resetTrade = () => {
         setTrade({
+            tradeId: availableId,
             securityCode: '',
             tradePrice: 0.0,
             tradeVolume: 0.0,

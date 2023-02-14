@@ -5,7 +5,6 @@ import TableRow from "../components/TableRow/TableRow";
 import {useEffect, useState} from "react";
 import AddModal from "../components/AddModal/AddModal";
 
-
 export default function Table({trades}) {
     const [tableTrades, setTableTrades] = useState(trades)
     const [showAddModal, setShowAddModal] = useState(false)
@@ -17,7 +16,6 @@ export default function Table({trades}) {
     const addCallback =  (trade) => {
         setTableTrades([...tableTrades, trade])
     }
-
     const onPressAdd = () => {
         setShowAddModal(true)
     }
@@ -30,13 +28,11 @@ export default function Table({trades}) {
                 return trade
             }
         })
-        console.log(updatedTrades)
         setTableTrades(updatedTrades)
     }
 
     const deleteCallback = (tradeId) => {
         const updatedTrades = tableTrades.filter((trade) => trade.tradeId !== tradeId)
-        console.log(updatedTrades)
         setTableTrades(updatedTrades)
     }
     return (
@@ -56,9 +52,9 @@ export default function Table({trades}) {
                     </tbody>
                 </table>
                 <div className={'add-button'} onClick={onPressAdd}>ADD TRADE</div>
-                <AddModal availableId={tableTrades.length+1} show={showAddModal}  addCallback={addCallback} onHide = {()=>{
+                {showAddModal ? <><AddModal availableId={tableTrades.length+1} show={showAddModal}  addCallback={addCallback} onHide = {()=>{
                     setShowAddModal(false)
-                }}/>
+                }}/></>: <></>}
             </div>
         </>
     )
