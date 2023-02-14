@@ -1,0 +1,65 @@
+import './Table.css'
+import TableHeader from "../components/TableHeader/TableHeader";
+import {TableHeaders} from "../utils/GeneralUtils";
+import TableRow from "../components/TableRow/TableRow";
+import {useEffect, useState} from "react";
+import AddModal from "../components/AddModal/AddModal";
+
+
+export default function Table({trades}) {
+    const [tableTrades, setTableTrades] = useState(trades)
+    const [showAddModal, setShowAddModal] = useState(false)
+
+    useEffect(() => {
+        setTableTrades(trades)
+    }, [trades])
+
+    const addCallback =  (trade) => {
+        setTableTrades([...tableTrades, trade])
+    }
+
+    const onPressAdd = () => {
+        setShowAddModal(true)
+    }
+
+    const amendCallback = (updatedTrade) => {
+        const updatedTrades = tableTrades.map((trade) => {
+            if(trade.tradeId === updatedTrade.tradeId){
+                return updatedTrade
+            } else {
+                return trade
+            }
+        })
+        console.log(updatedTrades)
+        setTableTrades(updatedTrades)
+    }
+
+    const deleteCallback = (tradeId) => {
+        const updatedTrades = tableTrades.filter((trade) => trade.tradeId !== tradeId)
+        console.log(updatedTrades)
+        setTableTrades(updatedTrades)
+    }
+    return (
+        <>
+            <div className={'table-main-container'}>
+                <h1>Sample Trades</h1>
+                <table>
+                    <thead>
+                    <tr className={'table-header-container'}>
+                        <TableHeader headers={TableHeaders}/>
+                    </tr>
+                    </thead>
+                    <tbody className={'table-row-container'}>
+                    {tableTrades.map((trade) => (
+                        <TableRow key={trade.tradeId} trade={trade} deleteCallback={deleteCallback} amendCallback={amendCallback}/>
+                    ))}
+                    </tbody>
+                </table>
+                <div className={'add-button'} onClick={onPressAdd}>ADD TRADE</div>
+                <AddModal availableId={tableTrades.length+1} show={showAddModal}  addCallback={addCallback} onHide = {()=>{
+                    setShowAddModal(false)
+                }}/>
+            </div>
+        </>
+    )
+}

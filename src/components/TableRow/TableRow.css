@@ -1,0 +1,19 @@
+.modify-table-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.modify-table-row.closed{
+    display: none;
+}
+
+.amend-button,
+.delete-button{
+    width: 15%;
+    height: 20px;
+    margin: 5px 0 5px 0;
+
+}
