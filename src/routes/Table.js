@@ -39,6 +39,7 @@ export default function Table({trades}) {
         <>
             <div className={'table-main-container'}>
                 <h1>Sample Trades</h1>
+                <div className={'add-button'} onClick={onPressAdd}>+</div>
                 <table>
                     <thead>
                     <tr className={'table-header-container'}>
@@ -51,7 +52,6 @@ export default function Table({trades}) {
                     ))}
                     </tbody>
                 </table>
-                <div className={'add-button'} onClick={onPressAdd}>ADD TRADE</div>
                 {showAddModal ? <><AddModal availableId={tableTrades.length+1} show={showAddModal}  addCallback={addCallback} onHide = {()=>{
                     setShowAddModal(false)
                 }}/></>: <></>}
